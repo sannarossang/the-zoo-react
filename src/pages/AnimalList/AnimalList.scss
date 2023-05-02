@@ -1,0 +1,24 @@
+.animalContainer {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.allAnimals {
+  background-color: beige;
+  padding: 50px;
+  margin: 20px;
+  align-items: center;
+  display: flex;
+  width: 20%;
+  flex-direction: column;
+}
+
+img {
+  width: 20%;
+}
+
+h1 {
+  color: black;
+}
