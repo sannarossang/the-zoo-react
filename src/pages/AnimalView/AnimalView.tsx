@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useParams } from "react-router";
 import { Animal } from "../../components/Animal/Animal";
 import { Navbar } from "../../components/Navbar/Navbar";

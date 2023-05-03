@@ -1,5 +1,8 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { IAnimalFullDescription } from "../../models/IAnimal";
+import { DateTime } from "luxon";
+import { FeedButton } from "../FeedButton/FeedButton";
 
 export const Animal = ({
   name,
@@ -22,14 +25,16 @@ export const Animal = ({
     );
   } else {
     return (
-      <div className="oneAnimal">
-        <h1>Namn: {name}</h1>
-        <h2>Latin name: {latinName}</h2>
-        <img src={imageUrl} alt={name} />
-        <p>{longDescription}</p>
-        <p>{lastFed}</p>
-        <button>Mata</button>
-      </div>
+      <>
+        <div className="oneAnimal">
+          <h1>Namn: {name}</h1>
+          <h2>Latin name: {latinName}</h2>
+          <img src={imageUrl} alt={name} />
+          <p>{longDescription}</p>
+          <p>{lastFed}</p>
+          <FeedButton></FeedButton>
+        </div>
+      </>
     );
   }
 };
