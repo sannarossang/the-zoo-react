@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { RouterProvider } from "react-router";
 import { Error } from "./pages/Error";
 import { createBrowserRouter } from "react-router-dom";
-import { Home } from "./pages/Home";
+import { Home } from "./pages/Home/Home";
 import { AnimalList } from "./pages/AnimalList/AnimalList";
 import { AnimalView } from "./pages/AnimalView/AnimalView";
 import "./main.scss";
