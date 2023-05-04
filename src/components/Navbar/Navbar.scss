@@ -2,9 +2,15 @@ ul {
   list-style-type: none;
   background-color: aquamarine;
   width: 100%;
+  font-family: "Sigmar", cursive;
 }
 
 li {
   display: inline;
   padding: 20px;
+  font-family: "Sigmar", cursive;
+}
+
+p {
+  font-family: "Courier New";
 }

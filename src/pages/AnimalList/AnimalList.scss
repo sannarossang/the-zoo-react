@@ -10,15 +10,16 @@
   padding: 50px;
   margin: 20px;
   align-items: center;
-  display: flex;
   width: 20%;
   flex-direction: column;
 }
 
 img {
-  width: 20%;
+  max-width: 30%;
+  border: dotted pink;
 }
 
 h1 {
   color: black;
+  font-family: "Sigmar", cursive;
 }

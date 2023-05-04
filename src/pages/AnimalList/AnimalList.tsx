@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react";
+import { SyntheticEvent, useEffect, useState } from "react";
 import { Navbar } from "../../components/Navbar/Navbar";
 import axios from "axios";
 import { IAnimal } from "../../models/IAnimal";
 import { Animal } from "../../components/Animal/Animal";
-import { Link } from "react-router-dom";
-import { saveAnimalsToLS } from "../../helpers/localStorage";
 import "../AnimalList/AnimalList.scss";
+import { getAnimals } from "../../services/api";
 
 export const AnimalList = () => {
   const [animals, setAnimals] = useState<IAnimal[]>([]);
@@ -15,18 +14,9 @@ export const AnimalList = () => {
     if (animalsFromLS.length > 0) {
       setAnimals(animals);
     } else {
-      const getAnimals = async () => {
-        try {
-          const response = await axios.get<IAnimal[]>("https://animals.azurewebsites.net/api/animals");
-          setAnimals(response.data);
-          localStorage.setItem("currentAnimals", JSON.stringify(response.data));
-          console.log(response.data);
-        } catch (error) {
-          console.log("Error when getting data from api...", error);
-          return [];
-        }
-      };
-      getAnimals();
+      getAnimals().then(response => {
+        setAnimals(response);
+      });
     }
   }, []);
 
