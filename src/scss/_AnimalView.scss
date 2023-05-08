@@ -32,7 +32,17 @@
 
   &__longdescription {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 10px;
+    font-size: 13px;
+
+    @include mixins.desktop {
+      font-size: 20px;
+    }
+  }
+
+  &__fed {
+    font-size: 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
 
     @include mixins.desktop {
       font-size: 12px;
@@ -49,10 +59,13 @@ button {
   background-color: rgb(98, 66, 15);
   border-radius: 5px;
   width: 150px;
+  margin: 25px;
+  padding: 10px;
 
   @include mixins.desktop {
     font-size: 12px;
     padding: 10px;
-    width: 250px;
+    margin: 45px;
+    padding: 20px;
   }
 }

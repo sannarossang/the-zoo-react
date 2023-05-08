@@ -26,10 +26,10 @@ export const Animal = (animal: IAnimalFullDescription) => {
           className="allAnimals__image"
         />
         <p className="allAnimals__shortdescription">{animal.shortDescription}</p>
-        <p className="allAnimals_fed">Är matad: {`${animal.isFed}`}</p>
         <Link to={animal.id.toString()} className="allAnimals__link">
           Läs mer om {animal.name}
         </Link>
+        <p className="allAnimals__fed">Är matad: {`${animal.isFed}`}</p>
       </div>
     );
   } else {

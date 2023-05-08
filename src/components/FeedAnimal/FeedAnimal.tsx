@@ -61,8 +61,8 @@ export const FeedAnimal = (props: FeedAnimalProps) => {
       <button type="button" disabled={animal.isFed} onClick={handleClick} className="feedBtn">
         {animal.isFed ? "Inte hungrig" : "Så hungrig! Mata mig!"}
       </button>{" "}
-      <p>Är matad: {`${animal.isFed}`}</p>
-      <p>Matad senast: {convertedDate}</p>
+      <p className="oneAnimal__fed">Är matad: {`${animal.isFed}`}</p>
+      <p className="oneAnimal__fed">Matad senast: {convertedDate}</p>
     </>
   );
 };
