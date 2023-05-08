@@ -1,3 +1,6 @@
+@use "variables" as v;
+@use "mixins";
+
 ul {
   list-style-type: none;
   background-color: rgb(98, 66, 15);
@@ -5,6 +8,11 @@ ul {
   padding: 10px;
   display: flex;
   justify-content: right;
+  font-size: 22px;
+
+  @include mixins.desktop {
+    font-size: 20px;
+  }
 }
 
 li {

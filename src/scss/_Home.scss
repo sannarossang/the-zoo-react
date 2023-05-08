@@ -5,10 +5,10 @@
   &__image {
     justify-content: center;
     align-items: center;
-    width: 50%;
+    width: 75%;
 
     @include mixins.desktop {
-      width: 50%;
+      width: 20%;
     }
   }
 
