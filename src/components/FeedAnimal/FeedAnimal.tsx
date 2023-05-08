@@ -13,24 +13,21 @@ export const FeedAnimal = (props: FeedAnimalProps) => {
 
   const params = useParams();
 
-  let isHungry = false;
+  useEffect(() => {
+    if (props.animal.id) {
+      const timeNow = DateTime.now();
+      const timeLastFed = DateTime.fromISO(props.animal.lastFed);
 
-  // useEffect(() => {
-  //   if (props.animal.id) {
-  //     const timeNow = DateTime.now();
-  //     const timeLastFed = DateTime.fromISO(props.animal.lastFed);
+      const timeSinceLastFed = timeNow.diff(timeLastFed, "hours").hours;
+      console.log(timeSinceLastFed);
 
-  //     const timeSinceLastFed = timeNow.diff(timeLastFed, "minutes").minutes;
-  //     console.log(timeSinceLastFed);
-
-  //     isHungry = !props.animal.isFed && timeSinceLastFed >= 1;
-  //     console.log(isHungry);
-
-  //     if (timeSinceLastFed >= 1) {
-  //       props.animal.isFed = false;
-  //     }
-  //   }
-  // });
+      if (timeSinceLastFed >= 3) {
+        {
+          setAnimal({ ...props.animal, isFed: false });
+        }
+      }
+    }
+  });
 
   const handleClick = () => {
     const currentTime = DateTime.now().toString();
@@ -61,7 +58,7 @@ export const FeedAnimal = (props: FeedAnimalProps) => {
       <button type="button" disabled={animal.isFed} onClick={handleClick} className="feedBtn">
         {animal.isFed ? "Inte hungrig" : "Så hungrig! Mata mig!"}
       </button>{" "}
-      <p className="oneAnimal__fed">Är matad: {`${animal.isFed}`}</p>
+      <p className="allAnimals__fed">Är matad: {animal.isFed ? <p> Ja </p> : <p>Nej</p>}</p>
       <p className="oneAnimal__fed">Matad senast: {convertedDate}</p>
     </>
   );
