@@ -17,7 +17,7 @@ export const Animal = (animal: IAnimalFullDescription) => {
 
   if (animal.fullView === false) {
     return (
-      <div className="allAnimals">
+      <div className={animal.isFed ? "allAnimals allAnimalsFed" : "allAnimals allAnimalsNotFed"}>
         <h1 className="allAnimals__name">{animal.name}</h1>
         <img
           src={animal.imageUrl}
@@ -29,7 +29,7 @@ export const Animal = (animal: IAnimalFullDescription) => {
         <Link to={animal.id.toString()} className="allAnimals__link">
           Läs mer om {animal.name}
         </Link>
-        <p className="allAnimals__fed">Är matad: {`${animal.isFed}`}</p>
+        <p className="allAnimals__fed">Är matad: {animal.isFed ? <p> Ja </p> : <p>Nej</p>}</p>
       </div>
     );
   } else {
