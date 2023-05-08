@@ -1,9 +1,8 @@
-import { useState } from "react";
 import { useParams } from "react-router";
 import { Animal } from "../../components/Animal/Animal";
 import { Navbar } from "../../components/Navbar/Navbar";
 import { IAnimal } from "../../models/IAnimal";
-import "../AnimalView/AnimalView.scss";
+import "../../scss/_AnimalView.scss";
 
 export const AnimalView = () => {
   const params = useParams();

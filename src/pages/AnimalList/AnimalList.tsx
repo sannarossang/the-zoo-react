@@ -1,9 +1,8 @@
 import { SyntheticEvent, useEffect, useState } from "react";
 import { Navbar } from "../../components/Navbar/Navbar";
-import axios from "axios";
 import { IAnimal } from "../../models/IAnimal";
 import { Animal } from "../../components/Animal/Animal";
-import "../AnimalList/AnimalList.scss";
+import "../../scss/_AnimalList.scss";
 import { getAnimals } from "../../services/api";
 
 export const AnimalList = () => {

@@ -1,0 +1,78 @@
+@use "variables" as v;
+@use "mixins";
+
+.animalContainer {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  @include mixins.desktop {
+  }
+}
+
+.allAnimals {
+  background-color: beige;
+  padding: 20px;
+  margin: 20px;
+  height: 500px;
+  align-items: center;
+  width: 20%;
+  flex-direction: column;
+  display: flex;
+  border-radius: 5px;
+
+  @include mixins.desktop {
+    padding: 20px;
+    margin: 20px;
+    height: 500px;
+    align-items: center;
+    width: 20%;
+    flex-direction: column;
+    display: flex;
+    border-radius: 5px;
+  }
+
+  &__name {
+    font-size: 20px;
+    font-family: "Sigmar", cursive;
+    font-size: 25px;
+  }
+
+  &__image {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    height: 100px;
+    width: 100px;
+
+    @include mixins.desktop {
+      height: 250px;
+      width: 250px;
+    }
+  }
+
+  &__shortdescription {
+    color: rgb(98, 66, 15);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+
+    @include mixins.desktop {
+      height: 250px;
+      width: 250px;
+      font-size: 14px;
+    }
+  }
+
+  &__link {
+    color: rgb(98, 66, 15);
+    font-family: "Sigmar", cursive;
+    bottom: 0;
+    font-size: 14px;
+
+    @include mixins.desktop {
+      font-size: 20px;
+    }
+  }
+}

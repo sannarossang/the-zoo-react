@@ -1,8 +1,10 @@
 ul {
   list-style-type: none;
-  background-color: aquamarine;
-  width: 100%;
+  background-color: rgb(98, 66, 15);
   font-family: "Sigmar", cursive;
+  padding: 10px;
+  display: flex;
+  justify-content: right;
 }
 
 li {
@@ -13,4 +15,9 @@ li {
 
 p {
   font-family: "Courier New";
+}
+
+a {
+  color: white;
+  text-decoration: none;
 }

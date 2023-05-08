@@ -1,0 +1,26 @@
+@use "variables" as v;
+@use "mixins";
+
+.startpage {
+  color: blue($color: #000000);
+
+  &__image {
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+
+    @include mixins.desktop {
+      width: 50%;
+    }
+  }
+
+  &__title {
+    color: black;
+    font-family: "Sigmar", cursive;
+    font-size: 50px;
+
+    @include mixins.desktop {
+      font-size: 70px;
+    }
+  }
+}

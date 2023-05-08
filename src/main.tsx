@@ -6,7 +6,7 @@ import { createBrowserRouter } from "react-router-dom";
 import { Home } from "./pages/Home/Home";
 import { AnimalList } from "./pages/AnimalList/AnimalList";
 import { AnimalView } from "./pages/AnimalView/AnimalView";
-import "./main.scss";
+import "../src/scss/main.scss";
 
 const router = createBrowserRouter([
   {

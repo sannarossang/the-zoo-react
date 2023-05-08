@@ -1,6 +1,9 @@
+@use "reset";
+@use "variables" as v;
+@use "mixins";
+
 #root {
   margin: 0 auto;
-  // padding: 2rem;
   text-align: center;
   background-color: #debf9b;
 }

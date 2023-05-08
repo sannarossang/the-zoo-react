@@ -18,21 +18,33 @@ export const Animal = (animal: IAnimalFullDescription) => {
   if (animal.fullView === false) {
     return (
       <div className="allAnimals">
-        <h1>Namn: {animal.name}</h1>
-        <img src={animal.imageUrl} onError={event => addDefaultImage(event)} alt={animal.name} />
-        <p>{animal.shortDescription}</p>
-        <p>Är matad: {`${animal.isFed}`}</p>
-        <Link to={animal.id.toString()}>Läs mer</Link>
+        <h1 className="allAnimals__name">{animal.name}</h1>
+        <img
+          src={animal.imageUrl}
+          onError={event => addDefaultImage(event)}
+          alt={animal.name}
+          className="allAnimals__image"
+        />
+        <p className="allAnimals__shortdescription">{animal.shortDescription}</p>
+        <p className="allAnimals_fed">Är matad: {`${animal.isFed}`}</p>
+        <Link to={animal.id.toString()} className="allAnimals__link">
+          Läs mer om {animal.name}
+        </Link>
       </div>
     );
   } else {
     return (
       <>
         <div className="oneAnimal">
-          <h1>Namn: {animal.name}</h1>
-          <h2>Latin name: {animal.latinName}</h2>
-          <img src={animal.imageUrl} onError={event => addDefaultImage(event)} alt={animal.name} />
-          <p>{animal.longDescription}</p>
+          <h1 className="oneAnimal__name">{animal.name}</h1>
+          <h2 className="oneAnimal__latin">Latin name: {animal.latinName}</h2>
+          <img
+            src={animal.imageUrl}
+            onError={event => addDefaultImage(event)}
+            alt={animal.name}
+            className="allAnimals__image"
+          />
+          <p className="allAnimals__longdescription">{animal.longDescription}</p>
           <FeedAnimal animal={animal} sendFedAnimal={sendFedAnimal}></FeedAnimal>
         </div>
       </>
