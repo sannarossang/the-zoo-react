@@ -10,9 +10,9 @@ export const AnimalList = () => {
   const [animals, setAnimals] = useState<IAnimal[]>([]);
 
   useEffect(() => {
-    let animalsFromLS: IAnimal[] = JSON.parse(localStorage.getItem("animals") || "[]");
+    let animalsFromLS: IAnimal[] = JSON.parse(localStorage.getItem("currentAnimals") || "[]");
     if (animalsFromLS.length > 0) {
-      setAnimals(animals);
+      setAnimals(animalsFromLS);
     } else {
       getAnimals().then(response => {
         setAnimals(response);
@@ -25,7 +25,7 @@ export const AnimalList = () => {
       <Navbar></Navbar>
       <div className="animalContainer">
         {animals.map((animal, index) => (
-          <Animal fullView={false} {...animal}></Animal>
+          <Animal fullView={false} {...animal} key={animal.id}></Animal>
         ))}
       </div>
     </>
