@@ -13,11 +13,11 @@
 
 .allAnimals {
   background-color: beige;
-  padding: 20px;
-  margin: 20px;
-  height: 500px;
+  padding: 10px;
+  margin: 10px;
+  height: 450px;
   align-items: center;
-  width: 20%;
+  width: 35%;
   flex-direction: column;
   display: flex;
   border-radius: 5px;
@@ -25,12 +25,8 @@
   @include mixins.desktop {
     padding: 20px;
     margin: 20px;
-    height: 500px;
-    align-items: center;
+    height: 550px;
     width: 20%;
-    flex-direction: column;
-    display: flex;
-    border-radius: 5px;
   }
 
   &__name {
@@ -59,7 +55,6 @@
     font-size: 12px;
 
     @include mixins.desktop {
-      height: 250px;
       width: 250px;
       font-size: 14px;
     }

@@ -2,8 +2,6 @@
 @use "mixins";
 
 .startpage {
-  color: blue($color: #000000);
-
   &__image {
     justify-content: center;
     align-items: center;

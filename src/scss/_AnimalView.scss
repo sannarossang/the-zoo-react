@@ -8,27 +8,35 @@
   margin: 20px;
 
   &__name {
-    color: red($color: #000000);
     font-family: "Sigmar", cursive;
   }
 
   &__latin {
-    color: blue($color: #000000);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 12px;
   }
 
   &__image {
-    width: 55%;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    height: 200px;
+    width: 200px;
+
+    @include mixins.desktop {
+      height: 250px;
+      width: 250px;
+    }
   }
 
   &__longdescription {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 12px;
+    font-size: 10px;
+
+    @include mixins.desktop {
+      font-size: 12px;
+    }
   }
 }
 
@@ -40,5 +48,11 @@ button {
   color: white;
   background-color: rgb(98, 66, 15);
   border-radius: 5px;
-  padding: 10px;
+  width: 150px;
+
+  @include mixins.desktop {
+    font-size: 12px;
+    padding: 10px;
+    width: 250px;
+  }
 }

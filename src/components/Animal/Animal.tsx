@@ -42,9 +42,9 @@ export const Animal = (animal: IAnimalFullDescription) => {
             src={animal.imageUrl}
             onError={event => addDefaultImage(event)}
             alt={animal.name}
-            className="allAnimals__image"
+            className="oneAnimal__image"
           />
-          <p className="allAnimals__longdescription">{animal.longDescription}</p>
+          <p className="oneAnimal__longdescription">{animal.longDescription}</p>
           <FeedAnimal animal={animal} sendFedAnimal={sendFedAnimal}></FeedAnimal>
         </div>
       </>
