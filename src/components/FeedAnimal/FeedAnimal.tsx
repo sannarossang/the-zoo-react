@@ -6,6 +6,7 @@ import { useParams } from "react-router";
 
 interface FeedAnimalProps {
   animal: IAnimal;
+  sendFedAnimal: () => void;
 }
 
 export const FeedAnimal = (props: FeedAnimalProps) => {
@@ -32,14 +33,18 @@ export const FeedAnimal = (props: FeedAnimalProps) => {
     );
 
     localStorage.setItem("currentAnimals", JSON.stringify(updateAnimalList));
+    props.sendFedAnimal();
   };
+
+  const convertedDate = DateTime.fromISO(animal.lastFed).toLocaleString(DateTime.DATETIME_MED);
+
   return (
     <>
       <button type="button" disabled={animal.isFed} onClick={handleClick}>
-        {animal.isFed ? "Inte hungrig" : "Mata djuret"}
+        {animal.isFed ? "Inte hungrig" : "Så hungrig! Mata mig!"}
       </button>{" "}
       <p>Är matad: {`${animal.isFed}`}</p>
-      <p>Matad senast: {animal.lastFed}</p>
+      <p>Matad senast: {convertedDate}</p>//ändra tiden
     </>
   );
 };
