@@ -1,6 +1,5 @@
-import "../FeedAnimal/FeedAnimal.scss";
 import { DateTime } from "luxon";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IAnimal } from "../../models/IAnimal";
 import { useParams } from "react-router";
 
@@ -13,6 +12,25 @@ export const FeedAnimal = (props: FeedAnimalProps) => {
   const [animal, setAnimal] = useState<IAnimal>(props.animal);
 
   const params = useParams();
+
+  let isHungry = false;
+
+  // useEffect(() => {
+  //   if (props.animal.id) {
+  //     const timeNow = DateTime.now();
+  //     const timeLastFed = DateTime.fromISO(props.animal.lastFed);
+
+  //     const timeSinceLastFed = timeNow.diff(timeLastFed, "minutes").minutes;
+  //     console.log(timeSinceLastFed);
+
+  //     isHungry = !props.animal.isFed && timeSinceLastFed >= 1;
+  //     console.log(isHungry);
+
+  //     if (timeSinceLastFed >= 1) {
+  //       props.animal.isFed = false;
+  //     }
+  //   }
+  // });
 
   const handleClick = () => {
     const currentTime = DateTime.now().toString();
@@ -40,11 +58,11 @@ export const FeedAnimal = (props: FeedAnimalProps) => {
 
   return (
     <>
-      <button type="button" disabled={animal.isFed} onClick={handleClick}>
+      <button type="button" disabled={animal.isFed} onClick={handleClick} className="feedBtn">
         {animal.isFed ? "Inte hungrig" : "Så hungrig! Mata mig!"}
       </button>{" "}
       <p>Är matad: {`${animal.isFed}`}</p>
-      <p>Matad senast: {convertedDate}</p>//ändra tiden
+      <p>Matad senast: {convertedDate}</p>
     </>
   );
 };
