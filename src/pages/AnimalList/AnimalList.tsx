@@ -1,4 +1,4 @@
-import { SyntheticEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Navbar } from "../../components/Navbar/Navbar";
 import { IAnimal } from "../../models/IAnimal";
 import { Animal } from "../../components/Animal/Animal";

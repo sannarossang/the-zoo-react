@@ -15,7 +15,7 @@
   background-color: beige;
   padding: 10px;
   margin: 10px;
-  height: 350px;
+  height: 500px;
   align-items: center;
   width: 35%;
   flex-direction: column;
@@ -78,6 +78,28 @@
   }
 
   &__fed {
+    font-size: 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+
+    @include mixins.desktop {
+      font-size: 12px;
+    }
+  }
+
+  &__feedNow {
+    background-color: pink;
+    font-size: 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+
+    @include mixins.desktop {
+      font-size: 12px;
+    }
+  }
+
+  &__noNeedToFeed {
+    background-color: blueviolet;
     font-size: 12px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-style: italic;

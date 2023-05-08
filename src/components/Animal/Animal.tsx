@@ -30,6 +30,9 @@ export const Animal = (animal: IAnimalFullDescription) => {
           Läs mer om {animal.name}
         </Link>
         <p className="allAnimals__fed">Är matad: {animal.isFed ? <p> Ja </p> : <p>Nej</p>}</p>
+        {/* <p className="allAnimals__fed">
+          Dags för mat? {animal.needsToFeed ? <p>Nu måste du mata mig</p> : <p>Än klarar jag mig bra utan mat</p>}
+        </p> */}
       </div>
     );
   } else {

@@ -26,8 +26,14 @@ export const FeedAnimal = (props: FeedAnimalProps) => {
           setAnimal({ ...props.animal, isFed: false });
         }
       }
+
+      if (timeSinceLastFed >= 4) {
+        {
+          setAnimal({ ...props.animal, isFed: false, needsToFeed: true });
+        }
+      }
     }
-  });
+  }, [props.animal.id]);
 
   const handleClick = () => {
     const currentTime = DateTime.now().toString();
