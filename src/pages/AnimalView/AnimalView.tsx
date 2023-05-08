@@ -4,7 +4,6 @@ import { Animal } from "../../components/Animal/Animal";
 import { Navbar } from "../../components/Navbar/Navbar";
 import { IAnimal } from "../../models/IAnimal";
 import "../AnimalView/AnimalView.scss";
-import { DateTime } from "luxon";
 
 export const AnimalView = () => {
   const params = useParams();
